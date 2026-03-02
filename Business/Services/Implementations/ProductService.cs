@@ -60,7 +60,7 @@ public class ProductService : IProductService
     {
         Product product = await _productRepository.GetAsync(p => p.Name == name);
 
-        if (product == null) return new ErrorDataResult<ProductGetDto>("Product not found!");
+        if (product == null) return new ErrorDataResult<ProductGetDto>("Product was not found!");
         return new SuccessDataResult<ProductGetDto>(_mapper.Map<ProductGetDto>(product), "Product found!");
     }
      
