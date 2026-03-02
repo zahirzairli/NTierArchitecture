@@ -69,6 +69,6 @@ public class ProductService : IProductService
         if (!await _productRepository.ExistAsync(p => p.Id == productCreateDto.Id)) throw new NotFoundException(ExceptionMessages.ProductDoesnotExist);
         _productRepository.Update(_mapper.Map<Product>(productCreateDto));
        int result = await _productRepository.SaveAsync();
-        return result == 0 ? new ErrorResult("Product was not updated!") : new SuccessResult("Product updated successfully!");
+        return result == 0 ? new ErrorResult("Product was not updated successfullly!") : new SuccessResult("Product updated successfully!");
     }
 }
